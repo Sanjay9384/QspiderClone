@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qspider Payment</title>
+    <link rel="stylesheet" href="../CssFiles/header.css">
+
+    <style>
+        body {
+            background-color: rgb(34, 21, 58);
+            color: black;
+            margin: 0;
+        }
+
+        .courses {
+            background-color: rgb(216, 214, 219);
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            width: 800px;
+            height: 325px;
+            border: 5px dotted black;
+            padding: 10px;
+            position: absolute;
+            top: 300px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+
+        p {
+            font-size: 25px;
+        }
+
+        .topic {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        button {
+            font-size: 25px;
+            background-color: rgb(86, 86, 226);
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            opacity: 0.7;
+        }
+
+        .course1,
+        .course2,
+        .course3 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back {
+            width: 200px;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .main {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        @media screen and (min-width: 669px) and (max-width: 900px) {
+            .courses {
+                width: 600px;
+                height: 375px;
+            }
+        }
+
+        @media screen and (min-width: 600px) and (max-width: 670px){
+            .courses {
+                width: 500px;
+                height: 375px;
+            }
+            .back {
+            width: 180px;
+        }
+
+        }
+
+        @media screen and (min-width: 460px) and (max-width: 601px){
+            .courses {
+                width: 400px;
+                height: 275px;
+            }
+
+            button {
+            font-size: 15px;
+            background-color: rgb(86, 86, 226);
+            border: none;
+            border-radius: 5px;
+        }
+        .topic {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        p {
+            font-size: 15px;
+        }
+        .back {
+            width: 150px;
+        }
+        }
+
+        @media screen and (min-width: 310px) and (max-width: 461px){
+            .courses {
+                width: 280px;
+                height: 180px;
+            }
+
+            button {
+            font-size: 13px;
+            background-color: rgb(86, 86, 226);
+            border: none;
+            border-radius: 5px;
+        }
+        .topic {
+            font-size: 15px;
+            font-weight: bold;
+        }
+        p {
+            font-size: 10px;
+        }
+        .back {
+            width: 120px;
+        }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="main">
+        <div class="header">
+            <div class="right">
+                <div class="std"><a href="./home.html">Student</a></div>
+                <div class="vl"></div>
+                <div class="batch"><a href="./home.html" target="_parent">Batch List</a></div>
+            </div>
+            <div class="left">
+                <div class="left1">
+                    <ul class="list">
+                        <li class="items"><a href="./pay1.html" class="link">Pay</a> </li>
+                        <li class="items"><a href="" class="link" onclick="
+                        alert('Profile Downloaded')
+                        ">View Profile
+                            </a> </li>
+                        <li class="items"><a href="" class="link" onclick="
+                        alert(`No New Class is available Now!! Contact Councellor`);
+                        ">Join New Class</a> </li>
+                        <li class="items"><a href="" class="link" onclick="
+                        alert(`Contact HR for Requirements`)
+                        ">Requirements
+                            </a> </li>
+                        <li class="items"><a href="../login.html" class="link">Logout</a> </li>
+                    </ul>
+                </div>
+                <div class="left2">
+                    <select>
+                        <option>Sanjay</option>
+                        <option>Course Details</option>
+                        <option>Add Contact</option>
+                        <option>Add Email</option>
+                        <option>Refer Friend</option>
+                    </select>
+
+                </div>
+                <div class="menu">
+                    <div class="menu-line"></div>
+                    <div class="menu-line"></div>
+                    <div class="menu-line"></div>
+                </div>
+            </div>
+        </div>
+        <div class="courses">
+            <p class="topic">Qspider Jspider Courses Payment</p>
+            <div class="course1">
+                <p>Full Stack Development - Java</p>
+                <button><a href="./payslip.html">Pay Now</a></button>
+            </div>
+            <div class="course2">
+                <p>Full Stack Development - Python</p>
+                <button><a href="./payslip.html">Pay Now</a></button>
+            </div>
+            <div class="course3">
+                <p>Software Testing/Manual/Automation</p>
+                <button><a href="./payslip.html">Pay Now</a></button>
+            </div>
+            <button class="back"><a href="./home.html">Back</a></button>
+        </div>
+    </div>
+
+    <script>
+        const menu = document.querySelector('.menu');
+        const menuList = document.querySelector('.left1');
+        const menuList2 = document.querySelector('.left2');
+
+        menu.addEventListener('click', () => {
+            menuList.classList.toggle('showmenu')
+        });
+
+        menu.addEventListener('click', () => {
+            menuList2.classList.toggle('showmenu')
+        });
+    </script>
+</body>
+
+</html>

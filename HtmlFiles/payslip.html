@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Qspider Online Pay</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../CssFiles/header.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0px;
+            background-color: rgb(30, 42, 68);
+            color: white;
+        }
+
+        form {
+            width: 500px;
+            height: 500px;
+            position: absolute;
+            top: 350px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .card-select {
+            width: 200px;
+            height: 30px;
+            background-color: rgb(255, 220, 178);
+            margin-top: 10px;
+            font-size: 16px;
+            color: black;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .back a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .main {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        @media screen and (min-width: 550px) and (max-width: 669px) {
+            form {
+                top: 300px;
+                width: 450px;
+                height: 400px;
+            }
+        }
+
+        @media screen and (min-width: 400px) and (max-width: 551px) {
+            form {
+                top: 250px;
+                width: 400px;
+                height: 350px;
+            }
+            
+        }
+
+        @media screen and (min-width: 320px) and (max-width: 440px) {
+            form {
+                top: 200px;
+                width: 300px;
+                height: 250px;
+            }
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="header">
+            <div class="right">
+                <div class="std"><a href="./home.html">Student</a></div>
+                <div class="vl"></div>
+                <div class="batch"><a href="./home.html" target="_parent">Batch List</a></div>
+            </div>
+            <div class="left">
+                <div class="left1">
+                    <ul class="list">
+                        <li class="items"><a href="./pay1.html" class="link">Pay</a> </li>
+                        <li class="items"><a href="" class="link" onclick="
+                        alert('Profile Downloaded')
+                        ">View Profile
+                            </a> </li>
+                        <li class="items"><a href="" class="link" onclick="
+                        alert(`No New Class is available Now!! Contact Councellor`);
+                        ">Join New Class</a> </li>
+                        <li class="items"><a href="" class="link" onclick="
+                        alert(`Contact HR for Requirements`)
+                        ">Requirements
+                            </a> </li>
+                        <li class="items"><a href="../login.html" class="link">Logout</a> </li>
+                    </ul>
+                </div>
+                <div class="left2">
+                    <select>
+                        <option>Sanjay</option>
+                        <option>Course Details</option>
+                        <option>Add Contact</option>
+                        <option>Add Email</option>
+                        <option>Refer Friend</option>
+                    </select>
+
+                </div>
+                <div class="menu">
+                    <div class="menu-line"></div>
+                    <div class="menu-line"></div>
+                    <div class="menu-line"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form">
+            <form name="employeeInfoForm">
+                <fieldset>
+                    <label for="name">First Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter your first name">
+                    <br />
+                    <label for="lastname">Last Name</label>
+                    <input type="text" id="lastname" class="form-control" name="lastname"
+                        placeholder="Enter your last name" />
+                    <br />
+                    <label for="salary">Mobile Number</label>
+                    <input type="number" id="ph-no" class="form-control" name="salary"
+                        placeholder="Enter your Mobile Number" />
+                    <br />
+                    <label for="superrate">Email</label>
+                    <input type="email" id="email" class="form-control" name="superrate"
+                        placeholder="Enter your Email Id" />
+                    <br />
+                    <label for="superrate">Amount</label>
+                    <input type="number" id="amount" class="form-control" name="superrate"
+                        placeholder="Payable Amount" />
+                    <br />
+                    <label>Select Options to Pay</label>
+                    <select class="card-select">
+                        <option>Debit Card</option>
+                        <option>Credit Card</option>
+                        <option>UPI Payment</option>
+                        <option>Apply Coupoun</option>
+                    </select><br><br>
+                    <button type="submit" class="pay" onclick="
+                    console.log(alert(`Payment Sucessfull !!!`));
+                    ">Pay Now</button>
+                    <button type="submit" class="back"><a href="./pay1.html">Back</a></button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const menu = document.querySelector('.menu');
+        const menuList = document.querySelector('.left1');
+        const menuList2 = document.querySelector('.left2');
+
+        menu.addEventListener('click', () => {
+            menuList.classList.toggle('showmenu')
+        });
+
+        menu.addEventListener('click', () => {
+            menuList2.classList.toggle('showmenu')
+        });
+    </script>
+</body>
+
+</html>
